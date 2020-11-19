@@ -41,8 +41,7 @@ Resources:
       Description: Creates a developer application in ZenPayroll.
       Policies:
         - AWSSecretsManagerGetSecretValuePolicy:
-            SecretArn:
-              app/*/payroll/doorkeeper_api
+            SecretArn: arn:aws:secretsmanager:*:*:secret:app/*/payroll/doorkeeper_api
       Environment:
         Variables:
           ENV: !Ref ENV
