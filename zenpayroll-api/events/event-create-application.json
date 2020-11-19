@@ -1,0 +1,4 @@
+{
+    "httpMethod": "POST",
+    "body": "{\"name\": \"Brave New App\",\"is_time_tracking\": \"false\",\"redirect_uri\": \"http://example.com\"}"
+}

@@ -1,0 +1,23 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: devportal-api
+Transform:
+- AWS::Serverless-2016-10-31
+Globals:
+  Function:
+    Timeout: 15
+Resources:
+  createOrganizationFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: src/handlers/create-organization.createOrganizationHandler
+      Runtime: nodejs12.x
+      MemorySize: 128
+      Timeout: 100
+      Description: Creates an organization in the DevPortal.
+      Events:
+        Api:
+          Type: Api
+          Properties:
+            Path: /organizations
+            Method: POST
+      CodeUri: createOrganizationFunction
