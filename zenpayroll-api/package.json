@@ -1,15 +1,21 @@
 {
-    "name": "delete-test-01",
-    "description": "delete-test-01-description",
+    "name": "zenpayroll-api",
+    "description": "Proxy to the ZenPayroll API",
     "version": "0.0.1",
     "private": true,
     "dependencies": {
         "aws-sdk": "^2.437.0"
     },
     "devDependencies": {
-        "jest": "^24.7.1"
+        "@types/aws-lambda": "^8.10.51",
+        "@types/node": "^13.13.5",
+        "jest": "^24.7.1",
+        "typescript": "^3.8.3"
     },
     "scripts": {
+        "clean": "rm -rf dist/",
+        "build": "npm run clean && mkdir ./dist && cp package.json ./dist/package.json && tsc",
+        "build:live": "npm run clean && mkdir ./dist && cp package.json ./dist/package.json && tsc -w",
         "test": "jest"
     }
 }

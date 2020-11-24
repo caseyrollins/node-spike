@@ -36,7 +36,8 @@ Resources:
   createApplication:
     Type: AWS::Serverless::Function
     Properties:
-      Handler: src/handlers/create-application.createApplicationHandler
+      Handler: create-application.createApplicationHandler
+      CodeUri: ./dist
       Runtime: nodejs12.x
       Description: Creates a developer application in ZenPayroll.
       Policies:
